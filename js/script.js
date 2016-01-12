@@ -19,9 +19,13 @@ function loadWeather(location, woeid) {
     success: function(weather) {
       temp = weather.temp+'&deg;'+weather.units.temp;
       city = weather.city+', '+weather.region;
+      icon = '<img src="' +weather.image+ '">';
+      humidity = 'Humidity: ' +weather.humidity+ '%';
   
       $("#temp").html(temp);
       $("#city").html(city);
+      $("#icon").html(icon);
+      $("#humid").html(humidity);
     },
     error: function(error) {
       $("#temp").html('<p>'+error+'</p>');
