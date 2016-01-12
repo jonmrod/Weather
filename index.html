@@ -1,15 +1,30 @@
 <html>
 <head>
-<title>Weather</title>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.0.2/jquery.simpleWeather.min.js"></script>
-<script type="text/javascript" src="js/script.js"></script>
+	<title>Weather</title>
+
+	<!-- import frameworks, style and script -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.0.2/jquery.simpleWeather.min.js"></script>
+	<script src="js/script.js"></script>
+	<link rel="stylesheet" href="css/style.css"/>
+
 </head>
 
 <body>
-<div id="weather"></div>
+	<ul>
+		<li>
 
-<h2><span error="0"></span></h2>
+			<div id="error"></div>
+			<div id="icon"></div>
+			<div id="temp"></div>
+			<div id="city"></div>
+			<div id="descrip"></div>
+			<div id="humid"></div>
+			<div id="zip"></div>
+
+		</li>
+	</ul>
+
 </body>
 
 </html>
