@@ -21,11 +21,13 @@ function loadWeather(location, woeid) {
       city = weather.city+', '+weather.region;
       icon = '<img src="' +weather.image+ '">';
       humidity = 'Humidity: ' +weather.humidity+ '%';
+      description = weather.text;
   
       $("#temp").html(temp);
       $("#city").html(city);
       $("#icon").html(icon);
       $("#humid").html(humidity);
+      $("#descrip").html(description);
     },
     error: function(error) {
       $("#temp").html('<p>'+error+'</p>');
