@@ -1,30 +1,57 @@
 <html>
+
 <head>
-	<title>Weather</title>
-
-	<!-- import frameworks, style and script -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.0.2/jquery.simpleWeather.min.js"></script>
-	<script src="js/script.js"></script>
-	<link rel="stylesheet" href="css/style.css"/>
-
+    <title>Weather</title>
+    <!-- import frameworks, style and script -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.0.2/jquery.simpleWeather.min.js"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-	<ul>
-		<li>
-
-			<div id="error"></div>
-			<div id="icon"></div>
-			<div id="temp"></div>
-			<div id="city"></div>
-			<div id="descrip"></div>
-			<div id="humid"></div>
-			<div id="zip"></div>
-
-		</li>
-	</ul>
-
-</body>
+	<table>
+		<tr>
+			<!-- city -->
+			<td>
+				<div id="city">--</div>
+			</td>
+		</tr>
+		<!-- picture and temp -->
+		<tr>
+			<td>
+				<div id="icon">--</div>
+			</td>
+			<td>
+				<div id="temp">--</div>
+			</td>
+		</tr>
+		<!-- import frameworks, style and script -->
+		<tr>
+			<td>
+				<div id="descrip">--</div>
+				<td>
+				</tr>
+				<tr>
+					<td>
+						<div id="humid">--</div>
+					</td>
+					<td>
+						<div id="wind">--</div>
+					</td>
+					<td>
+						<div id="lowHigh">--</div> 
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div id="zip">--zip</div>
+					</td>
+					<td>
+						<div id="error">--error</div>
+					</td>
+				</tr>
+			</table>
+		</body>
 
 </html>
