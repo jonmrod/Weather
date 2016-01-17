@@ -1,10 +1,12 @@
 
 $(document).ready(function() {
+  
+      $('#city').html('Loading weather from geotag...');
 	
 	navigator.geolocation.getCurrentPosition(complete, unknown);
 
 function unknown() {
-$('[error]').text("That's weird! We couldn't find you!");
+$('#error').html("Couldn't locate. Turn on geolocation or input your location");
 }
 
 function complete(position) {
@@ -20,17 +22,29 @@ function loadWeather(location, woeid) {
       temp = weather.temp+'&deg;'+weather.units.temp;
       city = weather.city+', '+weather.region;
       icon = '<img src="' +weather.image+ '">';
-      humidity = 'Humidity: ' +weather.humidity+ '%';
-      description = weather.text;
+      humidity = '<center>Humidity <br>' +weather.humidity+ '%</center>';
+      description = weather.currently;
+      wind = '<center>Wind <br>' +weather.wind.direction+ ' ' +weather.wind.speed+ ' ' +weather.units.speed+'</center>';
+      lowHigh = 'L ' +weather.low+ '  H ' +weather.high;
   
+      $('td').show();
       $("#temp").html(temp);
       $("#city").html(city);
       $("#icon").html(icon);
       $("#humid").html(humidity);
       $("#descrip").html(description);
+      $("#wind").html(wind);
+      $("#lowHigh").html(lowHigh);
+
+      forecast = '';
+      for (i = 1; i < 5; i++) {
+        forecast += '<td><center><img src="' +weather.forecast[i].thumbnail+ '"><br><b>' +weather.forecast[i].high+ '</b><br>'
+        +weather.forecast[i].low+ '<br>' +weather.forecast[i].day+ '</center></td>';
+      }
+      $("#daily").html(forecast);
     },
     error: function(error) {
-      $("#temp").html('<p>'+error+'</p>');
+      $("#error").html('<p>'+error+'</p>');
     }
   });
 }
