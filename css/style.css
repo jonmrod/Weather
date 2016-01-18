@@ -18,6 +18,7 @@ table {
     width: 450px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
 td {
 	display: none;
 }
@@ -31,9 +32,13 @@ td {
 }
 
 #icon {
-    margin: 0 auto;
+	height: 10px;
+	width: 70px;
+	padding-left: 50px;
+	padding-bottom: 120px;
 }
 
 #descrip {
     font-size: 30px;
+    padding-left: 50px;
 }
