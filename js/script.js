@@ -1,22 +1,21 @@
 
 $(document).ready(function() {
-  
-      $('#city').html('Loading weather from geotag...');
-	
-	navigator.geolocation.getCurrentPosition(complete, unknown);
+  loadWeather(0,0);
+  //navigator.geolocation.getCurrentPosition(complete, unknown);
 
 function unknown() {
-$('#error').html("Couldn't locate. Turn on geolocation or input your location");
+  $('#city').html("Couldn't locate. Turn on geolocation or input your location");
 }
 
 function complete(position) {
-      loadWeather(position.coords.latitude+','+position.coords.longitude);
-  }
+  loadWeather(position.coords.latitude+','+position.coords.longitude);
+}
 })
+
 function loadWeather(location, woeid) {
 	$.simpleWeather({
-    location: 'location',
-    woeid: 'woeid',
+    location: '',
+    woeid: '2397386',
     unit: 'f',
     success: function(weather) {
       temp = weather.temp+'&deg;'+weather.units.temp;
@@ -27,7 +26,6 @@ function loadWeather(location, woeid) {
       wind = '<center>Wind <br>' +weather.wind.direction+ ' ' +weather.wind.speed+ ' ' +weather.units.speed+'</center>';
       lowHigh = 'L ' +weather.low+ '  H ' +weather.high;
   
-      $('td').show();
       $("#temp").html(temp);
       $("#city").html(city);
       $("#icon").html(icon);
@@ -42,9 +40,10 @@ function loadWeather(location, woeid) {
         +weather.forecast[i].low+ '<br>' +weather.forecast[i].day+ '</center></td>';
       }
       $("#daily").html(forecast);
+      $('td').show();
     },
     error: function(error) {
-      $("#error").html('<p>'+error+'</p>');
+      $("#city").html('<p>Error</p>');
     }
   });
 }
