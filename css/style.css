@@ -23,6 +23,11 @@ td {
 	display: none;
 }
 
+#vertical {
+	width: 0px;
+	height: 20px;
+}
+
 #city {
     font-size: 40px;
 }
@@ -40,5 +45,4 @@ td {
 
 #descrip {
     font-size: 30px;
-    padding-left: 50px;
 }
