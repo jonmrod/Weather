@@ -1,21 +1,26 @@
 
 $(document).ready(function() {
-  loadWeather(0,0);
-  //navigator.geolocation.getCurrentPosition(complete, unknown);
+  //loadWeather(0,0);
+  navigator.geolocation.getCurrentPosition(complete, unknown);
+  /*$.getJSON('http://ipinfo.io', function(data){
+    var location=data.city+', '+data.country;
+    loadWeather(location, 0);
+    */
+    
 
 function unknown() {
   $('#city').html("Couldn't locate. Turn on geolocation or input your location");
 }
 
 function complete(position) {
-  loadWeather(position.coords.latitude+','+position.coords.longitude);
+  loadWeather(position.coords.latitude , position.coords.longitude);
 }
 })
 
 function loadWeather(location, woeid) {
 	$.simpleWeather({
-    location: '',
-    woeid: '2397386',
+    location: '(' + location + ',' + woeid + ')',
+    woeid: '',
     unit: 'f',
     success: function(weather) {
       temp = weather.temp+'&deg;'+weather.units.temp;
